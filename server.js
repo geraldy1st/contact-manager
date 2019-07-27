@@ -1,8 +1,17 @@
 const express = require('express');
+const connectDB = require('./config/db');
 
 const app = express();
 
-app.get('/', (req, res) => res.json({ msg: 'Welcome to the Contact App' }));
+// Connect Database
+connectDB();
+
+// Init Middleware
+app.use(express.json({ extended: false }));
+
+app.get('/', (req, res) =>
+  res.json({ msg: 'Welcome to the Contact App API...' })
+);
 
 // Define Routes
 app.use('/api/users', require('./routes/users'));
