@@ -5,10 +5,10 @@ import ContactContext from '../../context/contact/contactContext';
 const ContactItem = ({ contact }) => {
   const contactContext = useContext(ContactContext);
   const { deleteContact, setCurrent, clearCurrent } = contactContext;
-  const { id, name, phone, email, type } = contact;
+  const { _id, name, phone, email, type } = contact;
 
   const onDelete = () => {
-    deleteContact(id);
+    deleteContact(_id);
     clearCurrent();
   };
 
@@ -29,14 +29,12 @@ const ContactItem = ({ contact }) => {
       <ul className="list">
         {email && (
           <li>
-            <i className="fas fa-envelope-open" />
-            {email}
+            <i className="fas fa-envelope-open" /> {email}
           </li>
         )}
         {phone && (
           <li>
-            <i className="fas fa-phone" />
-            {phone}
+            <i className="fas fa-phone" /> {phone}
           </li>
         )}
       </ul>
