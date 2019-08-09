@@ -1,0 +1,4 @@
+{
+  "mongoURI": "mongodb+srv://Hwoarang:lplplp@contactmanagement-lvsbc.mongodb.net/test?retryWrites=true&w=majority",
+  "jwtSecret": "secret"
+}
